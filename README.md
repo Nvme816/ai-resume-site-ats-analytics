@@ -2,9 +2,6 @@
 # AI Powered Resume Site with ATS Analytics and Two Stage Delivery
 Convert a single Markdown resume into a publicly viewable, AI-enhanced HTML site with a CI/CD pipeline, Beta/Prod lanes, and ATS analytics.
 
-CoffeeCloud Series | Premium Tier  
-Brewing cloud innovation one project at a time. Where automation, infrastructure, and resilience meet precision. :contentReference[oaicite:1]{index=1}
-
 ## Situation
 You maintain a single canonical `resume.md` source file. You want to automatically:
 - Generate a polished HTML resume from markdown.
