@@ -1,0 +1,169 @@
+
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Resume Site infra - S3 (versioned), DynamoDB (DeploymentTracking, ResumeAnalytics), optional OIDC role.
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: Name for the public, versioned S3 bucket hosting the resume site.
+  ProjectTag:
+    Type: String
+    Default: resume-site
+    Description: Tag value to group resources.
+
+Resources:
+  ResumeBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      VersioningConfiguration:
+        Status: Enabled
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+      Tags:
+        - Key: project
+          Value: !Ref ProjectTag
+
+  ResumeBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref ResumeBucket
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: PublicReadGetObject
+            Effect: Allow
+            Principal: "*"
+            Action: s3:GetObject
+            Resource:
+              - !Sub arn:aws:s3:::${ResumeBucket}/beta/*
+              - !Sub arn:aws:s3:::${ResumeBucket}/prod/*
+
+  DeploymentTrackingTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub "${ProjectTag}-DeploymentTracking"
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: commit_sha
+          AttributeType: S
+        - AttributeName: env_ts
+          AttributeType: S
+      KeySchema:
+        - AttributeName: commit_sha
+          KeyType: HASH
+        - AttributeName: env_ts
+          KeyType: RANGE
+      Tags:
+        - Key: project
+          Value: !Ref ProjectTag
+
+  ResumeAnalyticsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub "${ProjectTag}-ResumeAnalytics"
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: commit_sha
+          AttributeType: S
+        - AttributeName: analysis_key
+          AttributeType: S
+      KeySchema:
+        - AttributeName: commit_sha
+          KeyType: HASH
+        - AttributeName: analysis_key
+          KeyType: RANGE
+      Tags:
+        - Key: project
+          Value: !Ref ProjectTag
+
+  GitHubOidcProvider:
+    Type: AWS::IAM::OIDCProvider
+    Properties:
+      Url: https://token.actions.githubusercontent.com
+      ClientIdList:
+        - sts.amazonaws.com
+      ThumbprintList:
+        - 6938fd4d98bab03faadb97b34396831e3780aea1
+
+  ResumeCiCdRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub "${ProjectTag}-cicd-role"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: !Ref GitHubOidcProvider
+            Action: sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringLike:
+                token.actions.githubusercontent.com:sub: "repo:<YOUR_GH_OWNER>/<YOUR_REPO>:*"
+      Policies:
+        - PolicyName: s3-ddb-cfn-access
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:PutObject
+                  - s3:PutObjectAcl
+                  - s3:CopyObject
+                  - s3:GetObject
+                Resource:
+                  - !Sub arn:aws:s3:::${ResumeBucket}/beta/*
+                  - !Sub arn:aws:s3:::${ResumeBucket}/prod/*
+              - Effect: Allow
+                Action:
+                  - s3:ListBucket
+                Resource:
+                  - !Sub arn:aws:s3:::${ResumeBucket}
+                Condition:
+                  StringLike:
+                    s3:prefix:
+                      - beta/*
+                      - prod/*
+              - Effect: Allow
+                Action:
+                  - dynamodb:PutItem
+                  - dynamodb:UpdateItem
+                  - dynamodb:DescribeTable
+                Resource:
+                  - !GetAtt DeploymentTrackingTable.Arn
+                  - !GetAtt ResumeAnalyticsTable.Arn
+              - Effect: Allow
+                Action:
+                  - cloudformation:DescribeStacks
+                  - cloudformation:DescribeStackEvents
+                  - cloudformation:GetTemplate
+                Resource: "*"
+      Tags:
+        - Key: project
+          Value: !Ref ProjectTag
+
+Outputs:
+  DeploymentTableName:
+    Description: DynamoDB table name for deployment tracking
+    Value: !Ref DeploymentTrackingTable
+
+  AnalyticsTableName:
+    Description: DynamoDB table name for resume analytics
+    Value: !Ref ResumeAnalyticsTable
+
+  OutBucketName:
+    Value: !Ref ResumeBucket
+    Export:
+      Name: !Sub "${AWS::StackName}-BucketName"
+
+  OutDeployTable:
+    Value: !Ref DeploymentTrackingTable
+
+  OutAnalyticsTable:
+    Value: !Ref ResumeAnalyticsTable
+
+  OutCiCdRoleArn:
+    Value: !GetAtt ResumeCiCdRole.Arn

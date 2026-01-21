@@ -1,0 +1,146 @@
+
+name: Resume Site CI/CD
+
+on:
+  pull_request:
+    branches: ["**"]
+  push:
+    branches: ["main"]
+
+env:
+  PROJECT_TAG: resume-site
+  TEMPLATE: infra/template.yml
+  REGION: us-east-1
+  BUCKET_NAME: ${{ vars.BUCKET_NAME || secrets.BUCKET_NAME }}
+  BETA_KEY: beta/index.html
+  PROD_KEY: prod/index.html
+  MODEL_ID: ${{ vars.MODEL_ID || '' }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Detect fork PR
+        id: forkcheck
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            if [ "${{ github.event.pull_request.head.repo.full_name }}" != "${{ github.repository }}" ]; then
+              echo "is_fork=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
+          echo "is_fork=false" >> "$GITHUB_OUTPUT"
+
+      - name: Stop early for fork PRs
+        if: steps.forkcheck.outputs.is_fork == 'true'
+        run: |
+          echo "Fork PR detected. Skipping AWS deploy because GitHub does not provide secrets to forks."
+          exit 0
+
+      - name: Ensure BUCKET_NAME is set
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${BUCKET_NAME}" ]; then
+            echo "BUCKET_NAME is not set. Add it as a GitHub Repo Variable (recommended) or Secret."
+            exit 1
+          fi
+
+      - name: Set environment (beta vs prod)
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "DEPLOY_ENV=beta" >> "$GITHUB_ENV"
+            echo "STACK_NAME=resume-site-beta-stack" >> "$GITHUB_ENV"
+          else
+            echo "DEPLOY_ENV=prod" >> "$GITHUB_ENV"
+            echo "STACK_NAME=resume-site-prod-stack" >> "$GITHUB_ENV"
+          fi
+
+      - name: Configure AWS (OIDC)
+        if: ${{ contains(toJson(vars), 'ROLE_TO_ASSUME') && vars.ROLE_TO_ASSUME != '' }}
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.ROLE_TO_ASSUME }}
+          role-session-name: gh-actions-resume-site
+          aws-region: ${{ env.REGION }}
+
+      - name: Configure AWS (keys)
+        if: ${{ !(contains(toJson(vars), 'ROLE_TO_ASSUME') && vars.ROLE_TO_ASSUME != '') && secrets.AWS_ACCESS_KEY_ID != '' && secrets.AWS_SECRET_ACCESS_KEY != '' }}
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.REGION }}
+
+      - name: Fail if no AWS auth configured
+        if: ${{ !(contains(toJson(vars), 'ROLE_TO_ASSUME') && vars.ROLE_TO_ASSUME != '') && (secrets.AWS_ACCESS_KEY_ID == '' || secrets.AWS_SECRET_ACCESS_KEY == '') }}
+        run: |
+          echo "No AWS auth configured. Set vars.ROLE_TO_ASSUME (OIDC) or secrets.AWS_ACCESS_KEY_ID/AWS_SECRET_ACCESS_KEY."
+          exit 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          pip install boto3
+
+      - name: Deploy CloudFormation (ensure infra exists/updated)
+        shell: bash
+        run: |
+          set -euo pipefail
+          aws cloudformation deploy \
+            --stack-name "$STACK_NAME" \
+            --template-file "$TEMPLATE" \
+            --parameter-overrides BucketName="$BUCKET_NAME" ProjectTag="$PROJECT_TAG" DeployEnv="$DEPLOY_ENV" \
+            --capabilities CAPABILITY_NAMED_IAM
+
+      - name: Export stack outputs (stable)
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          DEPLOY_TABLE=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" \
+            --query "Stacks[0].Outputs[?OutputKey=='DeploymentTableName'].OutputValue" --output text)
+
+          ANALYTICS_TABLE=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" \
+            --query "Stacks[0].Outputs[?OutputKey=='AnalyticsTableName'].OutputValue" --output text)
+
+          if [ -z "$DEPLOY_TABLE" ] || [ -z "$ANALYTICS_TABLE" ]; then
+            echo "Missing CloudFormation outputs. Ensure infra/template.yml defines DeploymentTableName and AnalyticsTableName outputs."
+            exit 1
+          fi
+
+          echo "DEPLOY_TABLE=$DEPLOY_TABLE" >> "$GITHUB_ENV"
+          echo "ANALYTICS_TABLE=$ANALYTICS_TABLE" >> "$GITHUB_ENV"
+
+      - name: Run pipeline (beta on PR, prod on main)
+        shell: bash
+        env:
+          AWS_REGION: ${{ env.REGION }}
+          BUCKET_NAME: ${{ env.BUCKET_NAME }}
+          DEPLOY_TABLE: ${{ env.DEPLOY_TABLE }}
+          ANALYTICS_TABLE: ${{ env.ANALYTICS_TABLE }}
+          BETA_KEY: ${{ env.BETA_KEY }}
+          PROD_KEY: ${{ env.PROD_KEY }}
+          MODEL_ID: ${{ env.MODEL_ID }}
+        run: |
+          set -euo pipefail
+          python pipeline.py --env "$DEPLOY_ENV"
