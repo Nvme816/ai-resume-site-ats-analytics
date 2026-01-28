@@ -8,17 +8,17 @@ Cloud Security Engineering professional focused on IAM governance, Zero Trust ac
 ## Experience
 
 ### Community Choice Financial Family of Brands | Remote
-**Cloud Infrastructure Operations Analyst** | Full-time  
+**IT Operations Analyst (Cloud Infrastructure & Platform Operations)** | Full-time  
 Jan 2025 – Present
 
 Operate within a high-impact OpsCommand environment supporting regulated financial platforms across AWS, automation systems and edge infrastructure.
 
 **Key Contributions**
-- Protected multi-million-dollar financial operations by sustaining AWS, edge, and automation uptime
-- Reduced P1 incidents by 60% in 90 days through proactive detection, escalation, and automation safeguards
-- Delivered ongoing operational efficiency and cloud cost control through performance optimization
-- Drove improvements in alert routing and automation to prevent silent failures and accelerate response
-- Executed backend production workflows supporting regulated financial operations
+- Sustained secure uptime for regulated financial operations across AWS, edge, and automation platforms
+- Reduced P1 incidents by 60% in 90 days through proactive detection, risk-based escalation, and automation guardrails
+- Improved alert routing and response by tuning monitoring thresholds aligned with financial and security impact
+- Triaged cloud and automation failures across infrastructure, identity, and execution layers to restore service and prevent recurrence
+- Maintained audit-ready monitoring, logging, and access telemetry to validate secure production execution
 
 **Core Responsibilities**
 - Triaged cloud and automation alerts to prevent service disruption
