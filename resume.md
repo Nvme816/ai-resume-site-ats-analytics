@@ -11,12 +11,12 @@ Cloud Security Engineering professional focused on IAM governance, Zero Trust ac
 **IT Operations Analyst (Cloud Infrastructure & Platform Operations)** | Full-time  
 Jan 2025 – Present
 
-Operate within a high-impact OpsCommand environment supporting regulated financial platforms across AWS, automation systems and edge infrastructure.
+Operate in a high-impact OpsCommand environment securing regulated financial platforms across AWS, automation systems and edge infrastructure.
 
 **Key Contributions**
-- Sustained secure uptime for regulated financial operations across AWS, edge, and automation platforms
-- Reduced P1 incidents by 60% in 90 days through proactive detection, risk-based escalation, and automation guardrails
-- Improved alert routing and response by tuning monitoring thresholds aligned with financial and security impact
+- Sustained secure uptime for regulated financial operations across AWS, edge and automation platforms
+- Contributed to a 60% reduction in P1 incidents by identifying low-signal alerts and escalating issues with business and security context
+- Improved alert routing by flagging noisy alerts and supporting threshold tuning based on financial and security impact
 - Triaged cloud and automation failures across infrastructure, identity, and execution layers to restore service and prevent recurrence
 - Maintained audit-ready monitoring, logging, and access telemetry to validate secure production execution
 
@@ -31,16 +31,14 @@ Operate within a high-impact OpsCommand environment supporting regulated financi
 **Cloud Engineering & DevOps Leadership Program** | Part-time  
 Mar 2025 – Sep 2025
 
-Selected for a director-led mentorship program focused on AWS DevOps execution, automation discipline and production operations. Strengthened decision-making, cross-team coordination and secure delivery practices.
+Selected for a director-led mentorship program focused on DevOps execution, automation and operations.
 
 **Key Outcomes**
-- Improved cloud operations coordination and incident execution discipline
-- Strengthened automation-first delivery mindset and change control habits
-- Expanded scope from operations to governance-aligned automation and control validation
-- Increased comfort with troubleshooting, reliability tradeoffs, and escalation workflows
-- Expanded exposure to governance-aligned cloud execution patterns
-
-Mentored by an AWS DevOps Director and Architect.
+- Improved incident execution discipline and cloud operations coordination
+- Strengthened automation first delivery mindset and change control habits
+- Expanded governance aligned validation for automation and access workflows
+- Increased comfort with troubleshooting, reliability tradeoffs and escalation workflows
+- Improved troubleshooting confidence across reliability tradeoffs and escalation workflows
 
 ### Community Choice Financial Family of Brands
 **Retail Systems Support Analyst (Service Desk Team)** | Full-time  
