@@ -20,13 +20,6 @@ Operate in a high-impact OpsCommand environment securing regulated financial pla
 - Triaged cloud and automation failures across infrastructure, identity, and execution layers to restore service and prevent recurrence
 - Maintained audit-ready monitoring, logging, and access telemetry to validate secure production execution
 
-**Core Responsibilities**
-- Triaged cloud and automation alerts to prevent service disruption
-- Monitored identity and access telemetry during production workflows to validate secure execution
-- Secured automation workflows and file transfers during patch windows
-- Maintained patch/watch compliance across 100+ cloud systems to prevent drift and instability
-- Embedded SLA-aligned observability to sustain critical financial services
-
 ### Community Choice Financial Family of Brands | Remote
 **Cloud Engineering & DevOps Leadership Program** | Part-time  
 Mar 2025 – Sep 2025
@@ -47,16 +40,11 @@ Jun 2024 – Jan 2025
 Supported secure, high-availability retail operations by maintaining uptime, access integrity, and transactional continuity across hybrid cloud and point-of-sale (POS) environments.
 
 **Key Contributions**
-- Ensured stable, secure operation of retail transaction workflows across hybrid cloud and store systems
-- Maintained workforce access by administering application access and resolving authentication issues
+- Maintained workforce access by administering application permissions and resolving authentication issues
 - Strengthened regulated payment operations by validating access paths between cloud and retail systems
-- Reduced transaction downtime through rapid triage of device, network and POS-related failures
-
-**Core Responsibilities**
-- Administered access for retail transaction systems and point-of-sale (POS) applications, ensuring secure and uninterrupted workforce use
-- Resolved workstation authentication issues to restore employee access and prevent service delays
-- Configured and validated controlled access paths between retail and cloud systems to support regulated transaction workflows
-- Diagnosed and resolved transaction, device, and network issues across retail transaction systems, POS terminals, printers, and cash-handling devices to maintain uptime and payment continuity
+- Reduced transaction downtime through rapid triage of device, network and POS failures
+- Resolved workstation and identity issues to restore employee access and prevent service delays
+- Diagnosed transaction, device and network incidents across POS terminals, printers and cash handling systems
 
 ### Amazon Web Services (AWS) | On-site
 **Data Center Technician** | Contract  
