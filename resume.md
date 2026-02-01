@@ -3,7 +3,7 @@
 Cloud Security Engineering | IAM Governance | Zero Trust | AWS Automation
 
 ## Professional Summary
-Cloud Security Engineering professional focused on IAM governance, Zero Trust access patterns and secure AWS automation. Experienced supporting regulated financial operations, hyperscale data center environments and maritime public transportation infrastructure. Build governance controls using Terraform, least-privilege design and audit-ready logging through CoffeeCloud project portfolio. Sustain uptime through alert triage and rapid restoration of automation processes.
+Cloud Security Engineering professional focused on IAM governance, Zero Trust access patterns and secure AWS automation. Experienced supporting regulated financial operations, hyperscale data center environments and security operations. Build governance controls using Terraform, least-privilege design and audit-ready logging through CoffeeCloud project portfolio. Sustain uptime through alert triage and rapid restoration of automation processes.
 
 ## Experience
 
@@ -15,9 +15,9 @@ Operate in a high-impact OpsCommand environment securing regulated financial pla
 
 **Key Contributions**
 - Sustained secure uptime for regulated financial operations across AWS, edge and automation platforms
-- Contributed to a 60% reduction in P1 incidents by identifying low-signal alerts and escalating issues with business and security context
+- Contributed to a 60% reduction in P1 incidents by identifying low-signal alerts, and escalating issues with business and security context
 - Improved alert routing by flagging noisy alerts and supporting threshold tuning based on financial and security impact
-- Triaged cloud and automation failures across infrastructure, identity, and execution layers to restore service and prevent recurrence
+- Triaged cloud and automation failures across infrastructure, identity and execution layers to restore service and prevent recurrence
 - Maintained audit-ready monitoring, logging, and access telemetry to validate secure production execution
 
 ### Community Choice Financial Family of Brands | Remote
@@ -33,7 +33,7 @@ Selected for a director-led mentorship program focused on DevOps execution, auto
 - Increased comfort with troubleshooting, reliability tradeoffs and escalation workflows
 - Improved troubleshooting confidence across reliability tradeoffs and escalation workflows
 
-### Community Choice Financial Family of Brands
+### Community Choice Financial Family of Brands| Remote
 **Retail Systems Support Analyst (Service Desk Team)** | Full-time  
 Jun 2024 – Jan 2025
 
