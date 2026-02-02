@@ -22,7 +22,7 @@ Operate within OpsCommand, an alert-driven platform operations function securing
 - Provided continuous incident summaries, operational data management, and platform risk visibility reports to senior management within a 24×7×365 OpsCommand function.
 
 ### Community Choice Financial Family of Brands | Remote
-**Cloud Engineering & DevOps Leadership Program** | Part-time  
+**Cloud Engineering & DevOps Mentorship Program** | Part-time  
 Mar 2025 – Sep 2025
 
 Selected for a director-led mentorship program focused on DevOps execution, automation and operations.
