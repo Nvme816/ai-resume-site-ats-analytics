@@ -11,14 +11,14 @@ Cloud Security Engineering professional focused on IAM governance, Zero Trust ac
 **IT Operations Analyst (Cloud Infrastructure & Platform Operations)** | Full-time  
 Jan 2025 – Present
 
-Operate in a high-impact OpsCommand environment securing regulated financial platforms across AWS, automation systems and edge infrastructure.
+Operate within OpsCommand, an alert-driven platform operations function securing regulated financial platforms across AWS, automation systems and edge infrastructure.
 
 **Key Contributions**
 - Sustained secure uptime for regulated financial operations across AWS, edge and automation platforms
-- Contributed to a 60% reduction in P1 incidents by identifying low-signal alerts, and escalating issues with business and security context
-- Improved alert routing by flagging noisy alerts and supporting threshold tuning based on financial and security impact
-- Triaged cloud and automation failures across infrastructure, identity and execution layers to restore service and prevent recurrence
-- Maintained audit-ready monitoring, logging, and access telemetry to validate secure production execution
+- Contributed to a 60% reduction in Priority-1 incidents by identifying low-signal alerts, triaging alert-triggered automation failures, and escalating issues with business and security context
+- Improved alert routing and signal quality by flagging noisy telemetry and supporting threshold tuning based on financial and security impact
+- Triaged alert-detected cloud platform failures across infrastructure, identity, and execution layers to restore service and prevent recurrence
+- Maintained alert-backed, audit-ready monitoring, logging, access telemetry, and reporting to validate and communicate secure production execution
 
 ### Community Choice Financial Family of Brands | Remote
 **Cloud Engineering & DevOps Leadership Program** | Part-time  
@@ -37,7 +37,7 @@ Selected for a director-led mentorship program focused on DevOps execution, auto
 **Retail Systems Support Analyst (Service Desk Team)** | Full-time  
 Jun 2024 – Jan 2025
 
-Supported secure, high-availability retail operations by maintaining uptime, access integrity, and transactional continuity across hybrid cloud and point-of-sale (POS) environments.
+Supported secure, high-availability retail operations by maintaining uptime, access integrity and transactional continuity across hybrid cloud and POS environments through ticket-driven service desk workflows.
 
 **Key Contributions**
 - Maintained workforce access by administering application permissions and resolving authentication issues
