@@ -34,7 +34,7 @@ Selected for a director-led mentorship program focused on DevOps execution, auto
 - Increased comfort with troubleshooting, reliability tradeoffs and escalation workflows
 - Improved troubleshooting confidence across reliability tradeoffs and escalation workflows
 
-### Community Choice Financial Family of Brands| Remote
+### Community Choice Financial Family of Brands | Remote
 **Retail Systems Support Analyst (Service Desk Team)** | Full-time  
 Jun 2024 – Jan 2025
 
