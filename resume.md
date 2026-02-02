@@ -19,7 +19,7 @@ Operate within OpsCommand, an alert-driven platform operations function securing
 - Improved alert routing and signal quality by flagging noisy telemetry and supporting threshold tuning based on financial and security impact
 - Triaged alert-detected cloud platform failures across infrastructure, identity, and execution layers to restore service and prevent recurrence
 - Maintained alert-backed, audit-ready monitoring, logging, access telemetry, and reporting to validate and communicate secure production execution
-- Provided continuous incident summaries, operational data management, and platform risk visibility reports to senior management within a 24×7×365 OpsCommand function.
+- Provided 24×7×365 incident summaries, operational data management reporting, and platform risk visibility reports to senior management.
 
 ### Community Choice Financial Family of Brands | Remote
 **Cloud Engineering & DevOps Mentorship Program** | Part-time  
