@@ -3,7 +3,7 @@
 Cloud Security Engineering | IAM Governance | Zero Trust | AWS Automation
 
 ## Professional Summary
-Cloud Security Engineering professional focused on IAM governance, Zero Trust access patterns and secure AWS automation. Experienced supporting regulated financial operations, hyperscale data center environments and security operations. Build governance controls using Terraform, least-privilege design and audit-ready logging through CoffeeCloud project portfolio. Sustain uptime through alert triage and rapid restoration of automation processes.
+Cloud Security Engineer focused on IAM governance, Zero Trust and AWS security automation. Currently operating in a risk assurance and platform operations function supporting regulated financial environments through cloud platform oversight, monitoring, incident triage and compliance logging.
 
 ## Experience
 
