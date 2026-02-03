@@ -22,17 +22,16 @@ Operate within OpsCommand, an alert-driven platform operations function securing
 - Provided 24×7×365 incident summaries, operational data management reporting, and platform risk visibility reports to senior management.
 
 ### Community Choice Financial Family of Brands | Remote
-**Cloud Engineering & DevOps Mentorship Program** | Part-time  
+**Cloud Engineering Mentorship Program** | Part-time  
 Mar 2025 – Sep 2025
 
-Selected for a director-led mentorship program focused on DevOps execution, automation and operations.
+Participated in a director-led mentorship program focused on platform operations, automation discipline and risk-aware execution in production environments.
 
 **Key Outcomes**
-- Improved incident execution discipline and cloud operations coordination
-- Strengthened automation first delivery mindset and change control habits
-- Expanded governance aligned validation for automation and access workflows
-- Increased comfort with troubleshooting, reliability tradeoffs and escalation workflows
-- Improved troubleshooting confidence across reliability tradeoffs and escalation workflows
+- Improved incident execution discipline and cross-team coordination during cloud operations
+- Strengthened automation practices with emphasis on controlled change and reliability tradeoffs
+- Expanded governance-aligned validation for access and automation workflows
+- Increased troubleshooting confidence across escalation paths and operational failure modes
 
 ### Community Choice Financial Family of Brands | Remote
 **Retail Systems Support Analyst (Service Desk Team)** | Full-time  
@@ -68,9 +67,6 @@ Jan 2015 – Jun 2017
 **Certified in Cybersecurity (CC)** | ISC2  
 Issued May 2024 | Expires May 2027  
 
-**Certified in Cybersecurity (CISSP)** | ISC2
-In Progress
-
 **Certified in Cybersecurity (CCSP)** | ISC2
 In Progress
 
@@ -81,4 +77,7 @@ In Progress
 In Progress
 
 **Terraform Associate** | HashiCorp
+In Progress
+
+**Certified in Cybersecurity (CISSP)** | ISC2
 In Progress
