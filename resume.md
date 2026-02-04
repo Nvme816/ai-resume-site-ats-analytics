@@ -11,15 +11,15 @@ Cloud Security Engineer focused on IAM governance, Zero Trust and AWS security a
 **IT Operations Analyst (Cloud Infrastructure & Platform Operations)** | Full-time  
 Jan 2025 – Present
 
-Operate as OpsCommand, alert-driven platform operations securing regulated financial platforms across AWS and Azure, automation systems and infrastructure.
+OpsCommand, alert-driven platform operations securing regulated financial platforms across AWS and Azure, automation systems and infrastructure.
 
 **Key Contributions**
 - Sustained secure uptime for regulated financial operations across AWS, edge and automation platforms
-- Contributed to a 60% reduction in Priority-1 incidents by identifying low-signal alerts, triaging alert-triggered automation failures, and escalating issues with business and security context
-- Improved alert routing and signal quality by flagging noisy telemetry and supporting threshold tuning based on financial and security impact
-- Triaged alert-detected cloud platform failures across infrastructure, identity, and execution layers to restore service and prevent recurrence
-- Maintained alert-backed, audit-ready monitoring, logging, access telemetry, and reporting to validate and communicate secure production execution
-- Provided 24×7×365 incident summaries, operational data management reporting, and platform risk visibility reports to senior management.
+- Drove a 60% reduction in Priority-1 incidents by identifying low-signal alerts, triaging alert-triggered automation failures, and escalating issues with business and security context
+- Increased alert signal fidelity by suppressing noisy telemetry and supporting tuning thresholds based on financial and security impact
+- Restored service by triaging alert-detected failures across infrastructure, identity, and execution layers, preventing recurrence through corrective action
+- Maintained audit-ready monitoring, logging, and access telemetry to validate secure production execution and support compliance reporting
+- Delivered 24×7×365 incident summaries, operational data management, and platform risk visibility reports to senior management
 
 ### Community Choice Financial Family of Brands | Remote
 **Cloud Engineering Mentorship Program** | Part-time  
