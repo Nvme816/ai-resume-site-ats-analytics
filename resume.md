@@ -61,7 +61,6 @@ Jun 2019 – Mar 2023
 ## Education
 **Utica University**  
 Master of Science (MS), Cybersecurity and Computer Forensics  
-Jan 2015 – Jun 2017
 
 ## Certifications
 **Certified in Cybersecurity (CC)** | ISC2  
