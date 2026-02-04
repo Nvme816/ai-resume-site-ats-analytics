@@ -11,7 +11,7 @@ Cloud Security Engineer focused on IAM governance, Zero Trust and AWS security a
 **IT Operations Analyst (Cloud Infrastructure & Platform Operations)** | Full-time  
 Jan 2025 – Present
 
-Operate within OpsCommand, an alert-driven platform operations function securing regulated financial platforms across AWS and Azure, automation systems and edge infrastructure.
+Operate as OpsCommand, an alert-driven platform operations function securing regulated financial platforms across AWS and Azure, automation systems and infrastructure.
 
 **Key Contributions**
 - Sustained secure uptime for regulated financial operations across AWS, edge and automation platforms
