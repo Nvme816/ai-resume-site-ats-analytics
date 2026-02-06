@@ -3,7 +3,7 @@
 Cloud Security Engineering | IAM Governance | Zero Trust | AWS Automation
 
 ## Professional Summary
-Cloud Security Engineer focused on IAM governance, Zero Trust and AWS security automation. Currently operating in a risk assurance and platform operations function supporting regulated financial environments through cloud platform oversight, monitoring, incident triage and compliance logging.
+Cloud Security Engineer focused on IAM governance, Zero Trust, and platform security across AWS and Azure. Operating in a high-trust, high-impact, alert-driven platform operations and risk assurance function responsible for automated financial control execution at runtime, failure detection, signal validation, incident triage, and audit-ready telemetry in regulated financial environments.
 
 ## Experience
 
