@@ -8,7 +8,7 @@ Cloud Security Engineer focused on IAM governance, Zero Trust and AWS security a
 ## Experience
 
 ### Community Choice Financial Family of Brands | Remote
-**IT Operations Analyst (Cloud Infrastructure & Platform Operations)** | Full-time  
+**IT Operations Analyst (Platform Operations & Risk Assurance)** | Full-time  
 Jan 2025 – Present
 
 OpsCommand, alert-driven platform operations enforcing security and reliability for regulated financial platforms across AWS and Azure, automation systems, and infrastructure.
