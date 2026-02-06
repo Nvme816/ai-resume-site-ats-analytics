@@ -14,7 +14,7 @@ Jan 2025 – Present
 OpsCommand, alert-driven platform operations enforcing security and reliability for regulated financial platforms across AWS and Azure, automation systems, and infrastructure.
 
 **Key Contributions**
-- Monitored platform and infrastructure health signals and handled regulated financial control alerts at the platform layer to maintain secure, reliable execution in production
+- Monitored platform and infrastructure health signals and handled regulated financial control alerts to maintain secure, reliable execution in production
 - Validated security-relevant alerts at the platform layer, filtering false positives and routing high-confidence signals to SOC with infrastructure, identity, and business impact context
 - Drove a 60% reduction in Priority-1 incidents by suppressing low-signal alerts, triaging alert-triggered automation failures, and escalating issues with business and security context
 - Increased alert signal fidelity by suppressing noisy telemetry and supporting tuning thresholds based on financial and security impact
