@@ -31,9 +31,9 @@ Participated in a director-led mentorship program focused on platform operations
 
 **Key Outcomes**
 - Improved incident execution discipline and cross-team coordination during cloud operations
-- Strengthened automation practices with emphasis on controlled change and reliability tradeoffs
-- Expanded governance-aligned validation for access and automation workflows
-- Increased troubleshooting confidence across escalation paths and operational failure modes
+- Strengthened automation practices with emphasis on controlled change, rollback safety, and reliability tradeoffs
+- Expanded governance-aligned validation for access control and automation workflows
+- Increased troubleshooting confidence across escalation paths, failure modes, and production incidents
 
 ### Community Choice Financial Family of Brands | Remote
 **Retail Systems Support Analyst (Service Desk Team)** | Full-time  
@@ -42,11 +42,11 @@ Jun 2024 – Jan 2025
 Supported secure, high-availability retail operations by maintaining uptime, access integrity and transactional continuity across hybrid cloud and POS environments through ticket-driven service desk workflows.
 
 **Key Contributions**
-- Maintained workforce access by administering application permissions and resolving authentication issues
-- Strengthened regulated payment operations by validating access paths between cloud and retail systems
-- Reduced transaction downtime through rapid triage of device, network and POS failures
-- Resolved workstation and identity issues to restore employee access and prevent service delays
-- Diagnosed transaction, device and network incidents across POS terminals, printers and cash handling systems
+- Maintained workforce access and operational continuity by administering application permissions and resolving authentication failures via service desk workflows
+- Supported regulated payment operations by validating access paths and connectivity between cloud systems and retail environments
+- Reduced transaction downtime through rapid triage of device, network, and point-of-sale failures impacting live retail operations
+- Restored employee access and service continuity by resolving workstation and identity issues tied to production workflows
+- Diagnosed transaction, device, and network incidents across POS terminals, peripherals, and cash-handling systems to prevent revenue disruption
 
 ### Amazon Web Services (AWS) | On-site
 **Data Center Technician** | Contract  
